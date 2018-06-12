@@ -17,3 +17,30 @@ divDom.addEventListener('click',function(){
   requestAnimationFrame(add);
 })
 ````
+#### 防抖debounce
+````js
+// 基础班
+var timeout;  //全局变量
+function handle() {
+  console.log("触发事件了")
+}
+function debounce() {
+  if(timeout) clearTimeout(timeout);
+  timeout = setTimeout(handle, 1000)
+}
+window.addEventListener('scroll', debounce)
+````
+````js
+// 进阶版
+function debounce(fn, wait) {
+  var timeout = null; //闭包 
+  return function() {
+    if(timeout !== null) clearTimeout(timeout);
+    timeout = setTimeout(fn, wait);
+  }
+}
+function handle() {
+  console.log(Math.random());
+}
+window.addEventListener('scroll', debounce(handle, 1000));
+````
