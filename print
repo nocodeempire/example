@@ -1,0 +1,39 @@
+@media print {
+
+    *,
+    *::before,
+    *::after {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .not-print {
+        display: none
+    }
+
+    .print-landscape {
+        size: A4 landscape;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid; //避免在元素内部插入分页符。
+    }
+
+    @page {
+        size: A4; //避免左右切割
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    .print-label {
+        display: table; //打印专属样式
+        page-break-before: auto;
+        page-break-after: always;
+    }
+
+    .print-label .list-group {
+        display: inline-block; //打印专属样式
+        page-break-inside: avoid;
+    }
+}
