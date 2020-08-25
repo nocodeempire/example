@@ -1,0 +1,4 @@
+const parseNum = (str: string | number) => {
+  const num = parseFloat(str).toFixed(2);
+  return `${num}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
