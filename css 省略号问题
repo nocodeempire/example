@@ -1,6 +1,7 @@
-# css 省略号问题
+css 省略号问题
 
 iOS 不支持整块超长溢出打点省略
+
 ```css
 .person-card__desc {
     width: 200px;
