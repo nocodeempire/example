@@ -4,5 +4,5 @@ Number.prototype.toFixed = function(digit = 0) {
     return Number(res).toLocaleString(undefined, {minimumFractionDigits: digit});
 }
 (111222.135).toFixed(2);  // '111,222.14' (不需要逗号的话 useGrouping: false)
-                          // 原生结果是'111,222.13'
+                          // 原生结果是'111222.13'
 ```
